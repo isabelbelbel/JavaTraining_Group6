@@ -1,0 +1,140 @@
+/*
+ * 1. Upon application start, ask user to create one User
+ * 2. Create one Library object
+ * 3. Initialize 5 Book objects and add it to all Library slots
+ * 4. Display options:
+ * 
+ * - [1] Display All Books
+ * - [2] Display Available Books
+ * - [3] Display All Borrowed Books
+ * - [4] Borrow Book
+ * - [5] Return Book
+ * - [6] Exit
+ * 
+ * - user selects the number of the option
+ * ===============================================
+ * 
+ *	 [1] Display All Books
+ * - Display all Books (ID, Title and Author) regardless if there is a Loan existing for that Book.
+ *   
+ *   [2] Display Available Books
+ * - Display Books that do not have a Loan slot
+ * 
+ *   [3] Display All Borrowed Books 
+ * - Display Books that have a Loan equivalent.
+ * - Display the Book title and the User name of borrower
+ *   
+ *	 [4] Borrow Book
+ * - Displays all available books and User selects what book to borrow
+ * - Create a Loan object, set Loan id set Book and set User to current user
+ * 
+ * 	 [5] Return Book
+ * - Display all Loans, user selects the Loan and removes that from the slot
+ * 
+ *   [6] Exit
+ * - Stops the program  
+ * */
+package project.librarySystem;
+
+import java.util.Scanner;
+
+public class LibraryApplication {
+	
+	private User user;
+	private Library library;
+	
+	// Main Application Logic, call this in your Main.java
+	public void start() {
+		// initial user creation
+		
+		Scanner sc = new Scanner(System.in);
+		int option = 0;
+		
+		this.user = new User();
+		
+		setUser(user);				
+		
+		// initial library creation
+		this.library = new Library(5);
+		
+		library.addBook(new Book(1, "The Lord of the Rings", "JRR Tolkien"));
+		library.addBook(new Book(2, "Demon Slayer Volume 21", "Koyoharu Gotouge"));
+		library.addBook(new Book(3, "One Piece Volume 101", "Eichiro Oda"));
+		library.addBook(new Book(4, "Gachiakuta Volume 1", "Kei Urana"));
+		library.addBook(new Book(5, "Look Back", "Tatsuki Fujimoto"));
+		library.addBook(new Book(6, "A Song of Ice and Fire", "GRRM"));
+		
+
+		// add code here
+				
+		do {
+		System.out.println("===============================================");
+		System.out.println("[1] Display All Books");
+		System.out.println("[2] Display Available Books");
+		System.out.println("[3] Display All Borrowed Books");
+		System.out.println("[4] Borrow Book");
+		System.out.println("[5] Return Book");
+		System.out.println("[6] Exit");
+		System.out.print("> ");
+		String strOption = sc.nextLine().trim();
+		option = Integer.parseInt(strOption);
+		//System.out.println("===============================================");
+
+			switch (option) {
+			case 1:
+				displayAllBooks(library);
+				break;
+			case 2:
+				displayAvailableBooks(library);
+				break;
+			case 3:
+				displayBorrowedBooks(library);
+				break;
+			case 4:
+				returnBook(library);
+				break;
+			case 5:
+				borrowBook(library);
+				break;
+			case 6:
+				option = 6;
+				System.out.println("Exiting...");	
+				break;
+			default:
+				System.out.println("Please enter valid option.");
+				break;
+			}
+		}while(option != 6);
+		
+	}
+	
+	private void setUser(User user){
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Please enter username: ");
+		user.setName(sc.nextLine().trim());
+		System.out.println("Welcome to the library, " + user.getName() + ".");
+		
+	}
+	
+	private void displayAllBooks(Library library) {
+		
+		library.getAllBooks();		
+	}
+	private void displayAvailableBooks(Library library) {
+		
+		library.getAvailableBooks();	
+	}
+	private void displayBorrowedBooks(Library library) {
+		
+		library.getBorrowedBooks(user.getName());	
+	}
+	
+	
+	private void returnBook(Library library) {}
+	private void borrowBook(Library library) {}
+	
+	
+	// add code here
+	
+}
