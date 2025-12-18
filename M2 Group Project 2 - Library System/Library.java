@@ -6,10 +6,13 @@ public class Library{
 	
 	private Book[] books;
 	private int bookCount = 0;
+	private Loan[] loans;
+	private int loanCount = 0;
 	
 	public Library (int counter) {
 		
 		this.books = new Book[counter];
+		this.loans = new Loan[counter];
 		
 	}
 	public void addBook(Book newBook) {
@@ -32,17 +35,11 @@ public class Library{
 			System.out.println("DISPLAY ALL BOOKS:");
 
 			for (int x = 0; x < books.length; x++) {
-				String status = "";
-				if (books[x].getIsAvailable()) {
-					status = "AVAILABLE";
-				}else {
-					status = "BORROWED";
-				}
-				
+
 				System.out.println(books[x].getId() + " | "
 						+ books[x].getTitle() + " | "
 						+ books[x].getAuthor() + " | "
-						+ status
+						+ (books[x].getIsAvailable() ? "AVAILABLE" : "BORROWED")
 						);	
 			}
 		}else {
@@ -52,7 +49,6 @@ public class Library{
 		}
 	};
 	public void getAvailableBooks() {
-		
 		
 		int availableBooks = 0;
 		if (bookCount > 0) {
@@ -109,8 +105,19 @@ public class Library{
 		}
 		
 	};
-	public void borrowBook() {};
-	public void returnBook() {};
+	public void borrowBook(Integer id, String borrower) {
+		
+		//check if book is available
+		//set isAvailable to false
+		//log book title to loan array via bookID
+		//log username to loan array
+	};
+	public void returnBook() {
+		
+		//check if loanId is on the loan array
+		//via loanId get bookId then via bookId set status of is Available to TRUE
+		//remove from Loan Array via loanID
+	};
 	
 
 }

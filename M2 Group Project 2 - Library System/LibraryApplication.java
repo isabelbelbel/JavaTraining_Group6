@@ -91,10 +91,10 @@ public class LibraryApplication {
 				displayBorrowedBooks(library);
 				break;
 			case 4:
-				returnBook(library);
+				borrowBook(library);
 				break;
 			case 5:
-				borrowBook(library);
+				returnBook(library);
 				break;
 			case 6:
 				option = 6;
