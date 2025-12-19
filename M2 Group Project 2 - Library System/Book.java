@@ -48,5 +48,4 @@ public class Book {
 		this.author = author;
 		
 	}
-	// feel free to add fields that may help
 }

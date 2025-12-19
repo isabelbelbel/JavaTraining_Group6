@@ -68,41 +68,41 @@ public class LibraryApplication {
 		// add code here
 				
 		do {
-		System.out.println("===============================================");
-		System.out.println("[1] Display All Books");
-		System.out.println("[2] Display Available Books");
-		System.out.println("[3] Display All Borrowed Books");
-		System.out.println("[4] Borrow Book");
-		System.out.println("[5] Return Book");
-		System.out.println("[6] Exit");
-		System.out.print("> ");
-		String strOption = sc.nextLine().trim();
-		option = Integer.parseInt(strOption);
-		//System.out.println("===============================================");
-
-			switch (option) {
-			case 1:
-				displayAllBooks(library);
-				break;
-			case 2:
-				displayAvailableBooks(library);
-				break;
-			case 3:
-				displayBorrowedBooks(library);
-				break;
-			case 4:
-				borrowBook(library);
-				break;
-			case 5:
-				returnBook(library);
-				break;
-			case 6:
-				option = 6;
-				System.out.println("Exiting...");	
-				break;
-			default:
-				System.out.println("Please enter valid option.");
-				break;
+			Common.doubleLineBreak();
+			System.out.println("[1] Display All Books");
+			System.out.println("[2] Display Available Books");
+			System.out.println("[3] Display All Borrowed Books");
+			System.out.println("[4] Borrow Book");
+			System.out.println("[5] Return Book");
+			System.out.println("[6] Exit");
+			System.out.print("> ");
+			String strOption = sc.nextLine().trim();
+			option = Integer.parseInt(strOption);
+			//System.out.println("===============================================");
+	
+				switch (option) {
+				case 1:
+					displayAllBooks(library);
+					break;
+				case 2:
+					displayAvailableBooks(library);
+					break;
+				case 3:
+					displayBorrowedBooks(library);
+					break;
+				case 4:
+					borrowBook(library);
+					break;
+				case 5:
+					returnBook(library);
+					break;
+				case 6:
+					option = 6;
+					System.out.println("Exiting...");	
+					break;
+				default:
+					System.out.println("Please enter valid option.");
+					break;
 			}
 		}while(option != 6);
 		
@@ -131,10 +131,29 @@ public class LibraryApplication {
 	}
 	
 	
-	private void returnBook(Library library) {}
-	private void borrowBook(Library library) {}
-	
-	
-	// add code here
-	
+	private void returnBook(Library library) {
+		
+		int count = library.getBorrowedBooks(user.getName());	
+		if (count > 0) {
+			Scanner sc = new Scanner(System.in);
+			Common.doubleLineBreak();
+			System.out.print("Enter Loan ID to return: ");
+			int loanId = Integer.parseInt(sc.nextLine().trim());
+			library.returnBook(loanId);
+		}
+	}
+	private void borrowBook(Library library) {
+		
+		int count = library.getAvailableBooks();
+		if (count > 0) {
+			Scanner sc = new Scanner(System.in);
+			Common.doubleLineBreak();
+			System.out.print("Enter Book ID to borrow: ");
+			int bookId = Integer.parseInt(sc.nextLine().trim());
+			library.borrowBook(bookId, user.getName());
+		}
+
+	}
+		
+
 }
