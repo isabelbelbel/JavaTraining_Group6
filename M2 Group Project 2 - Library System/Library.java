@@ -121,11 +121,7 @@ public class Library{
 	};
 	public void borrowBook(Integer bookId, String borrower) {
 		
-		//check if book is available
-		//set isAvailable to false
-		//log username to loan array
-		//log book title to loan array via bookID
-		
+
 		for (int i = 0; i < bookCount; i++) {
 	        if (books[i].getId() == bookId) {
 	            if (books[i].getIsAvailable()) {
@@ -146,16 +142,10 @@ public class Library{
 };
 	public void returnBook(int loanId) {
 	
-		//check if loanId is on the loan array
-		//via loanId get bookId then via bookId set status of is Available to TRUE
-		//remove from Loan Array via loanID
-		
 		 for (int i = 0; i < loanCount; i++) {
 		        if (loans[i].getLoanId() == loanId) {
-		            // mark book available again
 		            loans[i].getBook().setIsAvailable(true);
 
-		            // remove loan from array (shift left)
 		            for (int j = i; j < loanCount - 1; j++) {
 		                loans[j] = loans[j + 1];
 		            }
