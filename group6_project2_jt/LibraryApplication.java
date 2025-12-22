@@ -73,7 +73,7 @@ public class LibraryApplication {
 				
 		do {
 			Common.doubleLineBreak();
-			System.out.println("   ===[  LIBRARY PROGRAM MENU  ]===");
+			System.out.println("   ===[      LIBRARY PROGRAM MENU      ]===");
 			System.out.println("         [1] Display All Books");
 			System.out.println("         [2] Display Available Books");
 			System.out.println("         [3] Display All Borrowed Books");
