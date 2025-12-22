@@ -35,9 +35,8 @@ public class Loan implements LoanPolicy {
     }
 
     @Override
-    public int setBorrowLimit(int newLimit) {
+    public void setBorrowLimit(int newLimit) {
         Loan.borrowLimit = newLimit;
-        return Loan.borrowLimit;
     }
   
 }
