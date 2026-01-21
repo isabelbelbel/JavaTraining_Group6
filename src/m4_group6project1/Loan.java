@@ -1,4 +1,4 @@
-package m3_group6project1;
+package m4_group6project1;
 
 public class Loan {
     private static int loanCounter = 1; // auto-increment for loan IDs

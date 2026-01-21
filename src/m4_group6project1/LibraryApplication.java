@@ -49,7 +49,7 @@
  *   [0] Exit   
  * - Stops the program  
  * */
-package m3_group6project1;
+package m4_group6project1;
 
 import java.util.Scanner;
 
@@ -192,31 +192,39 @@ public class LibraryApplication {
 		
 		System.out.println("Please input the details of book to be added.\n");
 		System.out.print("Enter Book ID to be added: ");
-		if (sc.hasNextInt()) {
-			int bookID = Integer.parseInt(sc.nextLine().trim());
-			String[] existingBookDetails = lib.getExistingBookDetails(lib.getBooks(), bookID);
-			if (existingBookDetails != null) {
-				System.out.println("Book ID [" + bookID + "] is already existing in the system and being used for below book.");
-				System.out.println("        Title  - " + existingBookDetails[1]);
-				System.out.println("        Author - " + existingBookDetails[2]);
-				System.out.println("Adding of duplicate IDs is not allowed.");
-				//If book ID to be added was found to be already existing in books list, 
-				//this gets a number for book ID that is not yet used.
-				System.out.println("The next available book ID is " + lib.checkFreeBookID(lib.getBooks()) + ".");
-			} else {
-				System.out.print("Enter Book Title: ");
-				String bookTitle = sc.nextLine().trim();
-				System.out.print("Enter Author: ");
-				String author = sc.nextLine().trim();
-				//This adds to book list and returns true after successfully adding.
-				if (lib.addBook(bookID, bookTitle, author)) {
-					System.out.println("\nBook was successfully added.");
-				}
-			}
-		} else {
+		if (!sc.hasNextInt() ) {
 			System.out.println("Input was not a valid ID number.");
-			sc.nextLine();
-		}	
+			sc.nextLine();			
+			return;
+		}
+			
+		int bookID = Integer.parseInt(sc.nextLine().trim());		
+		
+		if (bookID < 1) {
+			System.out.println("Book ID number should not be lower than 1");
+			return;
+		}
+		
+		String[] existingBookDetails = lib.getExistingBookDetails(lib.getBooks(), bookID);
+		if (existingBookDetails != null) {
+			System.out.println("Book ID [" + bookID + "] is already existing in the system and being used for below book.");
+			System.out.println("        Title  - " + existingBookDetails[1]);
+			System.out.println("        Author - " + existingBookDetails[2]);
+			System.out.println("Adding of duplicate IDs is not allowed.");
+			//If book ID to be added was found to be already existing in books list, 
+			//this gets a number for book ID that is not yet used.
+			System.out.println("The next available book ID is " + lib.checkFreeBookID(lib.getBooks()) + ".");
+		} else {
+			System.out.print("Enter Book Title: ");
+			String bookTitle = sc.nextLine().trim();
+			System.out.print("Enter Author: ");
+			String author = sc.nextLine().trim();
+			//This adds to book list and returns true after successfully adding.
+			if (lib.addBook(bookID, bookTitle, author)) {
+				System.out.println("\nBook was successfully added.");
+			}
+		}
+		
 	}
 	
 	private void removeBook(Library lib, Scanner sc) {	
