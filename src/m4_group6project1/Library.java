@@ -1,4 +1,4 @@
-package m3_group6project1;
+package m4_group6project1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +30,12 @@ public class Library implements LoanPolicy {
 	public boolean addBook(int bookID, String bookTitle, String author) {
 		if (isBookCapacityLimited() && (getBooks().size() >= getBookCapacityLimit())) {
 			System.out.println("Library's book capacity limit is reached. Books can no longer be added.");
+			System.out.println("Book with title [" + bookTitle + "] is not added to the Library system.");
+			return false;
+		}
+		
+		if (bookID < 1) {
+			System.out.println("Book ID number should not be lower than 1");
 			System.out.println("Book with title [" + bookTitle + "] is not added to the Library system.");
 			return false;
 		}
