@@ -2,9 +2,17 @@ package m4_group6project1;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import m4_group6project1.exception.InvalidBookIdException;
+
 import java.util.Comparator;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
 public class Library implements LoanPolicy {
+	private static final Logger logger = LoggerFactory.getLogger(Library.class);
 	
     private List<Book> books = new ArrayList<>();
     private boolean isBookCapacityLimited = false;
@@ -16,28 +24,42 @@ public class Library implements LoanPolicy {
     	
     public void initializeBooks() {
     	//Initialization of 5 books.
-    	boolean isAllSuccessful = 
-    		addBook(1, "The Lord of the Rings", "JRR Tolkien") &
-			addBook(4, "Demon Slayer Volume 21", "Koyoharu Gotouge") &
-			addBook(2, "One Piece Volume 101", "Eichiro Oda") &
-			addBook(3, "Gachiakuta Volume 1", "Kei Urana") &
-			addBook(5, "Look Back", "Tatsuki Fujimoto")	;
-    	if (!isAllSuccessful) {
-    		System.out.println("System's initialization of books encountered error.");
-    	}
+        Object[][] initialBooks = new Object[][] {
+            {-1, "The Testing of Custom Exception", "Tester"}, //For testing custom exception and error log
+            {1, "The Lord of the Rings", "JRR Tolkien"},
+            {4, "Demon Slayer Volume 21", "Koyoharu Gotouge"},
+            {2, "One Piece Volume 101", "Eichiro Oda"},
+            {3, "Gachiakuta Volume 1", "Kei Urana"},
+            {5, "Look Back", "Tatsuki Fujimoto"}
+        };
+        for (Object[] initialBook : initialBooks) {
+	        int bookID = (int) initialBook[0];
+	        String bookTitle = (String) initialBook[1];
+	        String author = (String) initialBook[2];
+	
+	        try {
+	        	logger.info("Adding initial book: id={}, title='{}', author='{}'", bookID, bookTitle, author);
+	            addBook(bookID, bookTitle, author); 
+	        } catch (InvalidBookIdException e) {
+	            logger.error("Error encountered in adding initial book due to invalid book ID. " + e.getMessage());
+	            logger.error("Skipped adding initial book: id={}, title='{}', author='{}'", bookID, bookTitle, author);
+	        }
+	    }
+	
     }
 	
-	public boolean addBook(int bookID, String bookTitle, String author) {
+	public boolean addBook(int bookID, String bookTitle, String author) throws InvalidBookIdException {
 		if (isBookCapacityLimited() && (getBooks().size() >= getBookCapacityLimit())) {
 			System.out.println("Library's book capacity limit is reached. Books can no longer be added.");
 			System.out.println("Book with title [" + bookTitle + "] is not added to the Library system.");
+			logger.error("Book Capacity limit reached. "
+					+ "This book is not added to the system: id={}, title='{}', author='{}'", bookID, bookTitle, author);
 			return false;
 		}
 		
 		if (bookID < 1) {
-			System.out.println("Book ID number should not be lower than 1");
-			System.out.println("Book with title [" + bookTitle + "] is not added to the Library system.");
-			return false;
+			logger.error("Book with title [{}] and author [{}] is not added to the Library system.", bookTitle, author);
+			throw new InvalidBookIdException("Invalid Book ID input [" + bookID + "]. Book ID number should not be lower than 1.");
 		}
 		
 		//This checks if book ID that will be added is already existing in books list.
@@ -64,10 +86,13 @@ public class Library implements LoanPolicy {
 			    	//This sorts books list by ascending book ID.
 			        this.books.sort(Comparator.comparingInt(Book::getId));
 			    }
+			    logger.info("Book added: id={}, title='{}', author='{}'", bookID, bookTitle, author);
 			    return true;
 		    } else {
+		    	logger.error("Error encountered in Collection.add(). This book was not added: id={}, title='{}', author='{}'", bookID, bookTitle, author);
 		    	System.out.println("Book with ID [" + bookToBeAdded.getId() + "] "
-		    						+ "and title [" + bookToBeAdded.getTitle() + "] was not successfully added to the system.");
+		    						+ "and title [" + bookToBeAdded.getTitle() + "] was not successfully added to the system."
+		    								+ "Please contact system support for assistance and checking of logs.");
 		    }  			
 		}
 		return false;
@@ -122,6 +147,7 @@ public class Library implements LoanPolicy {
         }
         //This is for no ID match found in books list.
         System.out.println("There is no book with ID [" + bookID + "] in the system.");
+        logger.warn("No book found with id={} via getBookRefByID().", bookID);
         return null;
     }
     
@@ -143,6 +169,7 @@ public class Library implements LoanPolicy {
 		}		
         if (!bookToBorrow.getIsAvailable()) {
         	System.out.println("Sorry, " + bookToBorrow.getTitle() + " is already borrowed.");
+        	logger.info("A loaned book was being requested to be borrowed:  id={}, title='{}', author='{}'", bookID, bookToBorrow.getTitle() , bookToBorrow.getAuthor());
             return;
         }
         
@@ -152,8 +179,11 @@ public class Library implements LoanPolicy {
         if (this.loans.add(newLoan)) {        	
         	System.out.println(bookToBorrow.getTitle() + " has been loaned. Loan ID: " + newLoan.getLoanId());
         	bookToBorrow.setIsAvailable(false);
+        	logger.info("Loan with Loan ID={} was created for userId={}. Book with ID={} and title={} was set to unavailable.",
+                    newLoan.getLoanId(), borrower.getUserID(), bookToBorrow.getId(), bookToBorrow.getTitle());
 		} else {
 			System.out.println("Loan ID [" + newLoan.getLoanId() + "] was not successfully added to the system.");
+			logger.error("Failed to close loan id={} for book id={}, title='{}'", newLoan.getLoanId(), bookToBorrow.getId(), bookToBorrow.getTitle());
 		}
         
 	}
@@ -162,6 +192,7 @@ public class Library implements LoanPolicy {
 		Loan loanToRemove = getLoanRefByID(loanID);
 		if (loanToRemove == null) {
 			System.out.println("Loan ID [" + loanID + "] is not existing.");
+			logger.warn("No loan found with id={}", loanID);
 			return;
 		}
 		
@@ -169,8 +200,10 @@ public class Library implements LoanPolicy {
 		if (removeLoan(loanToRemove)) {
 			b.setIsAvailable(true);	
 			System.out.println("[" + b.getTitle() + "] is now available for borrowing.");
+			logger.info("Loan closed. Loan id={}, book='{}'", loanID, b.getTitle());
 		} else {
 			System.out.println("Error encountered. Book [" + b.getId() + "] [" + b.getTitle() + "] is still not made available for borrowing.");
+			logger.error("Failed to close loan id={} for book id={}, title='{}'", loanID, b.getId(), b.getTitle());
 		} 
 	}
 	
@@ -179,6 +212,7 @@ public class Library implements LoanPolicy {
 			int loanID = loanToRemove.getLoanId();
 			if (this.loans.remove(loanToRemove)) {
 				System.out.println("Loan ID [" + loanID + "] has been closed.");
+				logger.info("Loan removed: Loan id={}, Borrower's User id={}, Borrower's name={}", loanID, loanToRemove.getUser().getUserID(),loanToRemove.getUser().getName());
 				return true;
 			}			
 		}
@@ -196,6 +230,7 @@ public class Library implements LoanPolicy {
 		String title = bookToRemove.getTitle();
 		if (this.books.remove(bookToRemove)) {
 			System.out.println("Book with ID [" + bookID + "] and title [" + title + "] has been removed.");
+			logger.info("Book removed id={}, title='{}'", bookID, title);
 		}
 		
 		//This is to remove in loans list any loan that is associated to the bookID.
