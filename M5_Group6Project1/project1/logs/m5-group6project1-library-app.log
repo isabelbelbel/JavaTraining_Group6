@@ -1,0 +1,93 @@
+2026-01-28 12:54:47.489 [INFO] m5group6.project1.Main - 
+M5_Group6_Project1 Library Application starting...
+2026-01-28 12:57:51.551 [INFO] m5group6.project1.Main - 
+M5_Group6_Project1 Library Application starting...
+2026-01-28 12:58:56.980 [INFO] m5group6.project1.Main - 
+M5_Group6_Project1 Library Application starting...
+2026-01-28 12:59:33.531 [INFO] m5group6.project1.Main - 
+M5_Group6_Project1 Library Application starting...
+2026-01-28 12:59:33.703 [INFO] m5group6.project1.Main - Database Connected Successfuly
+2026-01-28 12:59:38.803 [INFO] m5group6.project1.Main - 
+M5_Group6_Project1 Library Application starting...
+2026-01-28 12:59:38.972 [INFO] m5group6.project1.Main - Database Connected Successfuly
+2026-01-28 14:19:03.096 [INFO] m5group6.project1.Main - 
+M5_Group6_Project1 Library Application starting...
+2026-01-28 14:19:03.264 [INFO] m5group6.project1.Main - Database Connected Successfuly
+2026-01-28 14:19:04.594 [INFO] m5group6.project1.LibraryApplication - User login initialized: name='test', id=1
+2026-01-28 14:19:04.598 [INFO] m5group6.project1.Library - Adding initial book: id=-1, title='The Testing of Custom Exception', author='Tester'
+2026-01-28 14:19:04.598 [ERROR] m5group6.project1.Library - Book with title [The Testing of Custom Exception] and author [Tester] is not added to the Library system.
+2026-01-28 14:19:04.598 [ERROR] m5group6.project1.Library - Error encountered in adding initial book due to invalid book ID. Invalid Book ID input [-1]. Book ID number should not be lower than 1.
+2026-01-28 14:19:04.599 [ERROR] m5group6.project1.Library - Skipped adding initial book: id=-1, title='The Testing of Custom Exception', author='Tester'
+2026-01-28 14:19:04.599 [INFO] m5group6.project1.Library - Adding initial book: id=1, title='The Lord of the Rings', author='JRR Tolkien'
+2026-01-28 14:19:04.601 [INFO] m5group6.project1.Library - Book added: id=1, title='The Lord of the Rings', author='JRR Tolkien'
+2026-01-28 14:19:04.601 [INFO] m5group6.project1.Library - Adding initial book: id=4, title='Demon Slayer Volume 21', author='Koyoharu Gotouge'
+2026-01-28 14:19:04.601 [INFO] m5group6.project1.Library - Book added: id=4, title='Demon Slayer Volume 21', author='Koyoharu Gotouge'
+2026-01-28 14:19:04.601 [INFO] m5group6.project1.Library - Adding initial book: id=2, title='One Piece Volume 101', author='Eichiro Oda'
+2026-01-28 14:19:04.602 [INFO] m5group6.project1.Library - Book added: id=2, title='One Piece Volume 101', author='Eichiro Oda'
+2026-01-28 14:19:04.602 [INFO] m5group6.project1.Library - Adding initial book: id=3, title='Gachiakuta Volume 1', author='Kei Urana'
+2026-01-28 14:19:04.603 [INFO] m5group6.project1.Library - Book added: id=3, title='Gachiakuta Volume 1', author='Kei Urana'
+2026-01-28 14:19:04.603 [INFO] m5group6.project1.Library - Adding initial book: id=5, title='Look Back', author='Tatsuki Fujimoto'
+2026-01-28 14:19:04.603 [INFO] m5group6.project1.Library - Book added: id=5, title='Look Back', author='Tatsuki Fujimoto'
+2026-01-28 14:19:06.134 [INFO] m5group6.project1.LibraryApplication - User selected option='1'
+2026-01-28 14:19:06.134 [INFO] m5group6.project1.LibraryApplication - Processing option [1] Display All Books.
+2026-01-28 14:33:45.201 [INFO] m5group6.project1.LibraryApplication - User selected option='4'
+2026-01-28 14:33:45.212 [INFO] m5group6.project1.LibraryApplication - Processing option [4] Borrow Book.
+2026-01-28 14:33:45.217 [INFO] m5group6.project1.LibraryApplication - Prompted for Book ID to borrow.
+2026-01-28 14:33:47.673 [INFO] m5group6.project1.LibraryApplication - User entered bookID=1 to borrow.
+2026-01-28 14:33:47.674 [INFO] m5group6.project1.Library - Loan with Loan ID=1 was created for userId=1. Book with ID=1 and title=The Lord of the Rings was set to unavailable.
+2026-01-28 14:33:49.181 [INFO] m5group6.project1.LibraryApplication - User selected option='2'
+2026-01-28 14:33:49.181 [INFO] m5group6.project1.LibraryApplication - Processing option [2] Display Available Books.
+2026-01-28 14:33:53.888 [INFO] m5group6.project1.LibraryApplication - User selected option='1'
+2026-01-28 14:33:53.889 [INFO] m5group6.project1.LibraryApplication - Processing option [1] Display All Books.
+2026-01-28 14:33:58.060 [INFO] m5group6.project1.LibraryApplication - User selected option='2'
+2026-01-28 14:33:58.061 [INFO] m5group6.project1.LibraryApplication - Processing option [2] Display Available Books.
+2026-01-28 14:33:59.660 [INFO] m5group6.project1.LibraryApplication - User selected option='3'
+2026-01-28 14:33:59.660 [INFO] m5group6.project1.LibraryApplication - Processing option [3] Display All Borrowed Books.
+2026-01-28 14:34:04.422 [INFO] m5group6.project1.LibraryApplication - User selected option='2'
+2026-01-28 14:34:04.422 [INFO] m5group6.project1.LibraryApplication - Processing option [2] Display Available Books.
+2026-01-28 14:34:05.453 [INFO] m5group6.project1.LibraryApplication - User selected option='3'
+2026-01-28 14:34:05.453 [INFO] m5group6.project1.LibraryApplication - Processing option [3] Display All Borrowed Books.
+2026-01-28 14:54:18.848 [INFO] m5group6.project1.LibraryApplication - User selected option='8'
+2026-01-28 14:54:18.849 [INFO] m5group6.project1.LibraryApplication - Processing option [8] Update Book.
+2026-01-28 14:54:18.850 [INFO] m5group6.project1.LibraryApplication - Prompted user for Book ID to update.
+2026-01-28 14:54:21.415 [INFO] m5group6.project1.LibraryApplication - User entered bookID=2 to update.
+2026-01-28 14:54:21.416 [INFO] m5group6.project1.LibraryApplication - Prompted user for new Title.
+2026-01-28 14:54:33.188 [INFO] m5group6.project1.LibraryApplication - Title updated to '0'
+2026-01-28 14:54:33.188 [INFO] m5group6.project1.LibraryApplication - Prompted user for new Author.
+2026-01-28 14:54:36.020 [INFO] m5group6.project1.LibraryApplication - Author updated to '0'
+2026-01-28 14:54:36.021 [INFO] m5group6.project1.LibraryApplication - Book updated id=2, title='0', author='0'
+2026-01-28 14:54:38.316 [INFO] m5group6.project1.LibraryApplication - User selected option='1'
+2026-01-28 14:54:38.317 [INFO] m5group6.project1.LibraryApplication - Processing option [1] Display All Books.
+2026-01-28 14:54:43.321 [INFO] m5group6.project1.LibraryApplication - User selected option='0'
+2026-01-28 14:54:43.321 [INFO] m5group6.project1.LibraryApplication - Processing option [0] Exit.
+2026-01-28 14:54:43.321 [INFO] m5group6.project1.Main - Application exited normally.
+2026-01-28 14:54:43.321 [INFO] m5group6.project1.Main - Main method finished execution.
+2026-01-28 15:23:13.957 [INFO] m5group6.project1.Main - 
+M5_Group6_Project1 Library Application starting...
+2026-01-28 15:23:14.739 [INFO] m5group6.project1.Main - Database Connected Successfuly
+2026-01-28 15:23:14.755 [INFO] m5group6.project1.Main - 
+M5_Group6_Project1 Library Application starting...
+2026-01-28 15:23:15.390 [INFO] m5group6.project1.Main - Database Connected Successfuly
+2026-01-28 15:23:20.224 [INFO] m5group6.project1.LibraryApplication - User login initialized: name='john', id=1
+2026-01-28 15:23:20.233 [INFO] m5group6.project1.Library - Adding initial book: id=-1, title='The Testing of Custom Exception', author='Tester'
+2026-01-28 15:23:20.233 [ERROR] m5group6.project1.Library - Book with title [The Testing of Custom Exception] and author [Tester] is not added to the Library system.
+2026-01-28 15:23:20.233 [ERROR] m5group6.project1.Library - Error encountered in adding initial book due to invalid book ID. Invalid Book ID input [-1]. Book ID number should not be lower than 1.
+2026-01-28 15:23:20.233 [ERROR] m5group6.project1.Library - Skipped adding initial book: id=-1, title='The Testing of Custom Exception', author='Tester'
+2026-01-28 15:23:20.233 [INFO] m5group6.project1.Library - Adding initial book: id=1, title='The Lord of the Rings', author='JRR Tolkien'
+2026-01-28 15:23:20.237 [INFO] m5group6.project1.Library - Book added: id=1, title='The Lord of the Rings', author='JRR Tolkien'
+2026-01-28 15:23:20.238 [INFO] m5group6.project1.Library - Adding initial book: id=4, title='Demon Slayer Volume 21', author='Koyoharu Gotouge'
+2026-01-28 15:23:20.238 [INFO] m5group6.project1.Library - Book added: id=4, title='Demon Slayer Volume 21', author='Koyoharu Gotouge'
+2026-01-28 15:23:20.238 [INFO] m5group6.project1.Library - Adding initial book: id=2, title='One Piece Volume 101', author='Eichiro Oda'
+2026-01-28 15:23:20.243 [INFO] m5group6.project1.Library - Book added: id=2, title='One Piece Volume 101', author='Eichiro Oda'
+2026-01-28 15:23:20.243 [INFO] m5group6.project1.Library - Adding initial book: id=3, title='Gachiakuta Volume 1', author='Kei Urana'
+2026-01-28 15:23:20.244 [INFO] m5group6.project1.Library - Book added: id=3, title='Gachiakuta Volume 1', author='Kei Urana'
+2026-01-28 15:23:20.244 [INFO] m5group6.project1.Library - Adding initial book: id=5, title='Look Back', author='Tatsuki Fujimoto'
+2026-01-28 15:23:20.244 [INFO] m5group6.project1.Library - Book added: id=5, title='Look Back', author='Tatsuki Fujimoto'
+2026-01-28 15:23:42.036 [INFO] m5group6.project1.LibraryApplication - User selected option='1'
+2026-01-28 15:23:42.037 [INFO] m5group6.project1.LibraryApplication - Processing option [1] Display All Books.
+2026-01-28 15:23:44.686 [INFO] m5group6.project1.LibraryApplication - User selected option='2'
+2026-01-28 15:23:44.687 [INFO] m5group6.project1.LibraryApplication - Processing option [2] Display Available Books.
+2026-01-28 15:23:45.530 [INFO] m5group6.project1.LibraryApplication - User selected option='3'
+2026-01-28 15:23:45.531 [INFO] m5group6.project1.LibraryApplication - Processing option [3] Display All Borrowed Books.
+2026-01-28 15:23:48.289 [INFO] m5group6.project1.LibraryApplication - User selected option='1'
+2026-01-28 15:23:48.290 [INFO] m5group6.project1.LibraryApplication - Processing option [1] Display All Books.

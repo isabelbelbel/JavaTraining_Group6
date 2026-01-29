@@ -1,0 +1,76 @@
+2026-01-27 15:45:16.047 [INFO] m5group6.project1.Main - 
+M4_Group6_Project1 Library Application starting...
+2026-01-27 15:45:21.613 [INFO] m5group6.project1.LibraryApplication - User login initialized: name='a', id=1
+2026-01-27 15:45:21.621 [INFO] m5group6.project1.Library - Adding initial book: id=-1, title='The Testing of Custom Exception', author='Tester'
+2026-01-27 15:45:21.622 [ERROR] m5group6.project1.Library - Book with title [The Testing of Custom Exception] and author [Tester] is not added to the Library system.
+2026-01-27 15:45:21.622 [ERROR] m5group6.project1.Library - Error encountered in adding initial book due to invalid book ID. Invalid Book ID input [-1]. Book ID number should not be lower than 1.
+2026-01-27 15:45:21.623 [ERROR] m5group6.project1.Library - Skipped adding initial book: id=-1, title='The Testing of Custom Exception', author='Tester'
+2026-01-27 15:45:21.624 [INFO] m5group6.project1.Library - Adding initial book: id=1, title='The Lord of the Rings', author='JRR Tolkien'
+2026-01-27 15:45:21.626 [INFO] m5group6.project1.Library - Book added: id=1, title='The Lord of the Rings', author='JRR Tolkien'
+2026-01-27 15:45:21.626 [INFO] m5group6.project1.Library - Adding initial book: id=4, title='Demon Slayer Volume 21', author='Koyoharu Gotouge'
+2026-01-27 15:45:21.626 [INFO] m5group6.project1.Library - Book added: id=4, title='Demon Slayer Volume 21', author='Koyoharu Gotouge'
+2026-01-27 15:45:21.627 [INFO] m5group6.project1.Library - Adding initial book: id=2, title='One Piece Volume 101', author='Eichiro Oda'
+2026-01-27 15:45:21.632 [INFO] m5group6.project1.Library - Book added: id=2, title='One Piece Volume 101', author='Eichiro Oda'
+2026-01-27 15:45:21.632 [INFO] m5group6.project1.Library - Adding initial book: id=3, title='Gachiakuta Volume 1', author='Kei Urana'
+2026-01-27 15:45:21.633 [INFO] m5group6.project1.Library - Book added: id=3, title='Gachiakuta Volume 1', author='Kei Urana'
+2026-01-27 15:45:21.633 [INFO] m5group6.project1.Library - Adding initial book: id=5, title='Look Back', author='Tatsuki Fujimoto'
+2026-01-27 15:45:21.633 [INFO] m5group6.project1.Library - Book added: id=5, title='Look Back', author='Tatsuki Fujimoto'
+2026-01-27 15:45:23.604 [INFO] m5group6.project1.LibraryApplication - User selected option='0'
+2026-01-27 15:45:23.604 [INFO] m5group6.project1.LibraryApplication - Processing option [0] Exit.
+2026-01-27 15:45:23.605 [INFO] m5group6.project1.Main - Application exited normally.
+2026-01-27 15:45:23.605 [INFO] m5group6.project1.Main - Main method finished execution.
+2026-01-27 15:48:55.461 [INFO] m5group6.project1.Main - 
+M4_Group6_Project1 Library Application starting...
+2026-01-27 15:48:59.181 [INFO] m5group6.project1.LibraryApplication - User login initialized: name='aa', id=1
+2026-01-27 15:48:59.184 [INFO] m5group6.project1.Library - Adding initial book: id=-1, title='The Testing of Custom Exception', author='Tester'
+2026-01-27 15:48:59.184 [ERROR] m5group6.project1.Library - Book with title [The Testing of Custom Exception] and author [Tester] is not added to the Library system.
+2026-01-27 15:48:59.184 [ERROR] m5group6.project1.Library - Error encountered in adding initial book due to invalid book ID. Invalid Book ID input [-1]. Book ID number should not be lower than 1.
+2026-01-27 15:48:59.184 [ERROR] m5group6.project1.Library - Skipped adding initial book: id=-1, title='The Testing of Custom Exception', author='Tester'
+2026-01-27 15:48:59.184 [INFO] m5group6.project1.Library - Adding initial book: id=1, title='The Lord of the Rings', author='JRR Tolkien'
+2026-01-27 15:48:59.185 [INFO] m5group6.project1.Library - Book added: id=1, title='The Lord of the Rings', author='JRR Tolkien'
+2026-01-27 15:48:59.185 [INFO] m5group6.project1.Library - Adding initial book: id=4, title='Demon Slayer Volume 21', author='Koyoharu Gotouge'
+2026-01-27 15:48:59.185 [INFO] m5group6.project1.Library - Book added: id=4, title='Demon Slayer Volume 21', author='Koyoharu Gotouge'
+2026-01-27 15:48:59.185 [INFO] m5group6.project1.Library - Adding initial book: id=2, title='One Piece Volume 101', author='Eichiro Oda'
+2026-01-27 15:48:59.186 [INFO] m5group6.project1.Library - Book added: id=2, title='One Piece Volume 101', author='Eichiro Oda'
+2026-01-27 15:48:59.187 [INFO] m5group6.project1.Library - Adding initial book: id=3, title='Gachiakuta Volume 1', author='Kei Urana'
+2026-01-27 15:48:59.187 [INFO] m5group6.project1.Library - Book added: id=3, title='Gachiakuta Volume 1', author='Kei Urana'
+2026-01-27 15:48:59.187 [INFO] m5group6.project1.Library - Adding initial book: id=5, title='Look Back', author='Tatsuki Fujimoto'
+2026-01-27 15:48:59.187 [INFO] m5group6.project1.Library - Book added: id=5, title='Look Back', author='Tatsuki Fujimoto'
+2026-01-27 15:49:02.046 [INFO] m5group6.project1.LibraryApplication - User selected option='1'
+2026-01-27 15:49:02.047 [INFO] m5group6.project1.LibraryApplication - Processing option [1] Display All Books.
+2026-01-27 15:49:04.229 [INFO] m5group6.project1.LibraryApplication - User selected option='2'
+2026-01-27 15:49:04.230 [INFO] m5group6.project1.LibraryApplication - Processing option [2] Display Available Books.
+2026-01-27 15:49:07.307 [INFO] m5group6.project1.LibraryApplication - User selected option='4'
+2026-01-27 15:49:07.308 [INFO] m5group6.project1.LibraryApplication - Processing option [4] Borrow Book.
+2026-01-27 15:49:07.315 [INFO] m5group6.project1.LibraryApplication - Prompted for Book ID to borrow.
+2026-01-27 15:49:12.564 [INFO] m5group6.project1.LibraryApplication - User entered bookID=3 to borrow.
+2026-01-27 15:49:12.565 [INFO] m5group6.project1.Library - Loan with Loan ID=1 was created for userId=1. Book with ID=3 and title=Gachiakuta Volume 1 was set to unavailable.
+2026-01-27 15:49:15.012 [INFO] m5group6.project1.LibraryApplication - User selected option='3'
+2026-01-27 15:49:15.013 [INFO] m5group6.project1.LibraryApplication - Processing option [3] Display All Borrowed Books.
+2026-01-27 15:49:19.187 [INFO] m5group6.project1.LibraryApplication - User selected option='0'
+2026-01-27 15:49:19.187 [INFO] m5group6.project1.LibraryApplication - Processing option [0] Exit.
+2026-01-27 15:49:19.188 [INFO] m5group6.project1.Main - Application exited normally.
+2026-01-27 15:49:19.188 [INFO] m5group6.project1.Main - Main method finished execution.
+2026-01-27 17:42:30.944 [INFO] m5group6.project1.Main - 
+M4_Group6_Project1 Library Application starting...
+2026-01-27 17:42:36.977 [INFO] m5group6.project1.LibraryApplication - User login initialized: name='aa', id=1
+2026-01-27 17:42:36.994 [INFO] m5group6.project1.Library - Adding initial book: id=-1, title='The Testing of Custom Exception', author='Tester'
+2026-01-27 17:42:36.995 [ERROR] m5group6.project1.Library - Book with title [The Testing of Custom Exception] and author [Tester] is not added to the Library system.
+2026-01-27 17:42:36.995 [ERROR] m5group6.project1.Library - Error encountered in adding initial book due to invalid book ID. Invalid Book ID input [-1]. Book ID number should not be lower than 1.
+2026-01-27 17:42:36.995 [ERROR] m5group6.project1.Library - Skipped adding initial book: id=-1, title='The Testing of Custom Exception', author='Tester'
+2026-01-27 17:42:36.995 [INFO] m5group6.project1.Library - Adding initial book: id=1, title='The Lord of the Rings', author='JRR Tolkien'
+2026-01-27 17:42:36.997 [INFO] m5group6.project1.Library - Book added: id=1, title='The Lord of the Rings', author='JRR Tolkien'
+2026-01-27 17:42:36.998 [INFO] m5group6.project1.Library - Adding initial book: id=4, title='Demon Slayer Volume 21', author='Koyoharu Gotouge'
+2026-01-27 17:42:36.998 [INFO] m5group6.project1.Library - Book added: id=4, title='Demon Slayer Volume 21', author='Koyoharu Gotouge'
+2026-01-27 17:42:36.998 [INFO] m5group6.project1.Library - Adding initial book: id=2, title='One Piece Volume 101', author='Eichiro Oda'
+2026-01-27 17:42:37.001 [INFO] m5group6.project1.Library - Book added: id=2, title='One Piece Volume 101', author='Eichiro Oda'
+2026-01-27 17:42:37.001 [INFO] m5group6.project1.Library - Adding initial book: id=3, title='Gachiakuta Volume 1', author='Kei Urana'
+2026-01-27 17:42:37.001 [INFO] m5group6.project1.Library - Book added: id=3, title='Gachiakuta Volume 1', author='Kei Urana'
+2026-01-27 17:42:37.001 [INFO] m5group6.project1.Library - Adding initial book: id=5, title='Look Back', author='Tatsuki Fujimoto'
+2026-01-27 17:42:37.002 [INFO] m5group6.project1.Library - Book added: id=5, title='Look Back', author='Tatsuki Fujimoto'
+2026-01-27 17:42:51.669 [INFO] m5group6.project1.LibraryApplication - User selected option='1'
+2026-01-27 17:42:51.670 [INFO] m5group6.project1.LibraryApplication - Processing option [1] Display All Books.
+2026-01-27 17:42:57.767 [INFO] m5group6.project1.LibraryApplication - User selected option='0'
+2026-01-27 17:42:57.767 [INFO] m5group6.project1.LibraryApplication - Processing option [0] Exit.
+2026-01-27 17:42:57.767 [INFO] m5group6.project1.Main - Application exited normally.
+2026-01-27 17:42:57.767 [INFO] m5group6.project1.Main - Main method finished execution.
